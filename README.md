@@ -13,13 +13,17 @@ http://www.sascommunity.org/sugi/SUGI91/Sugi-91-248%20Tsao%20LaLonde.pdf
 To calculate the exact upper bound for
 
 population: 1000
+
 sampled: 500
+
 successes: 50
+
 confidence level: 95%
 
 sbt
+
 run 1000 500 50 95
 
-[info] Running org.agoravoting.agora.HUBound 1000 500 50 95
-calculating with population 1000 sampled 500 successes 50 confidence level 0.050000000000000044
-upper bound 95.0% at 117 0.117
+    [info] Running org.agoravoting.agora.HUBound 1000 500 50 95
+    calculating with population 1000 sampled 500 successes 50 confidence level 0.050000000000000044
+    upper bound 95.0% at 117 0.117
