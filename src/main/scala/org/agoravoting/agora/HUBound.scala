@@ -1,8 +1,5 @@
 package org.agoravoting.agora
 
-import scala.util.{Try, Success, Failure}
-import java.io.{File, ByteArrayOutputStream, PrintStream}
-
 import org.apache.commons.math3.distribution.HypergeometricDistribution
 
 /**
@@ -28,7 +25,6 @@ object HUBound extends App {
             val h = new HypergeometricDistribution(population, i, sampled)
             h.cumulativeProbability(successes)
         }
-        // println("cdf, population " + population + " sampled " + sampled + " successes in pop " + i + " successes " + successes + " = " + p)
 
         if(p > confidence) {
             if(i >= max) {
@@ -41,8 +37,7 @@ object HUBound extends App {
     }
 
     return max;
-}
-
+  }
 
   if(args.length != 4) {
     println("HUBound <population> <sampled> <successes> <confidence>")
