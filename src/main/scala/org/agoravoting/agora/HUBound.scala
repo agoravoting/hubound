@@ -8,8 +8,8 @@ import org.apache.commons.math3.distribution.HypergeometricDistribution
  *
  * See
  *
- * https://www.rug.nl/research/portal/files/2912436/c4.pdf
- * http://www.sascommunity.org/sugi/SUGI91/Sugi-91-248%20Tsao%20LaLonde.pdf
+ * https://www.rug.nl/research/portal/files/2912436/c4.pdf (4.2.1)
+ * http://www.sascommunity.org/sugi/SUGI91/Sugi-91-248%20Tsao%20LaLonde.pdf (Eq 3)
  *
 */
 object HUBound extends App {
@@ -17,6 +17,8 @@ object HUBound extends App {
   def getUpperBound(population: Int, sampled: Int, successes: Int, confidence: Double): Int = {
     var max = -1;
     println("calculating with population " + population + " sampled " + sampled + " successes " + successes + " confidence level " + confidence)
+
+    // MU (k) = largest integer M s.t. P{K <= k} > alpha
     for (i <- 0 to population) {
         val p = if(successes > i) {
             0.0
